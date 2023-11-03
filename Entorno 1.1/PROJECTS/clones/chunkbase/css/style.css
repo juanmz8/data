@@ -1,0 +1,295 @@
+body {
+    background-color: #a8d5ff;
+    font-family: sans-serif;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/*Code of header*/
+
+.header {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__h1 {
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: 1px 1px 3px #484848;
+    color: #e4e4e4;
+}
+
+.header__span {
+    color: #cf8349;
+    text-shadow: 1px 1px 3px #484848;
+}
+
+.header__figure {
+    margin: 0rem;
+    text-align: center;
+}
+
+.header__img {
+    width: 100%;
+    max-width: 60rem;
+}
+
+/*Code of Nav bar*/
+
+.nav {
+    width: 90vw;
+    max-width: 50rem;
+    background-color: #d6752b;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    border-top: 4px solid #d6a47e;
+    border-left: 4px solid #d2854b;
+    border-bottom: 4px solid #542e10;
+    border-right: 4px solid #6a3a15;
+}
+
+.nav__input {
+    background-color: #d6752b;
+    width: 25%;
+    max-width: 6rem;
+    min-height: 2rem;
+    margin: 1rem 2rem;
+    border-style: none;
+    border-radius: 0.7rem;
+    color: #5B3213;
+    text-shadow: 1px 1px 3px #F8E8DC;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/*Code of Main*/
+
+.main,
+.aside {
+    background-color: #e0efff;
+    width: 90vw;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    border: 1px solid #668099;
+    border-radius: 1.5rem;
+    box-shadow: 2px 2px 5px #668099;
+}
+
+.main__h1,
+.aside__h1 {
+    /*Titles styles*/
+    background-color: #d6752b;
+    padding: 0.2rem 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    text-shadow: 0px 2px 4px #3b200b;
+    border-top: 4px solid #d6a47e;
+    border-left: 4px solid #d2854b;
+    border-bottom: 4px solid #542e10;
+    border-right: 4px solid #6a3a15;
+}
+
+.main__h2 {
+    margin-top: 0rem;
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.main__article {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__img {
+    background-color: #e9f3fd;
+    padding: 1rem 0.5rem;
+    max-width: 20rem;
+    width: 80%;
+    border: 1px solid #949494;
+    border-radius: 0.5rem;
+    box-shadow: 0px 1px 5px #b3cbe6;
+    cursor: pointer;
+}
+
+.div__div {
+    text-align: center;
+}
+
+.main__hr,
+.aside__hr {
+    color: transparent;
+    border-bottom: 1px solid #d8e1fc;
+    border-top: 1px solid #b6dcff;
+    max-width: 95%;
+}
+
+/*Code of Aside*/
+
+.aside {
+    /*diference of size between aside and main*/
+    max-width: 20rem;
+    padding-bottom: 1rem;
+}
+
+.aside__h3 {
+    /*link of app in aside*/
+    display: inline-block;
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.aside__span {
+    /*Version of that app*/
+    display: block;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.aside__p {
+    /*date of update app*/
+    display: block;
+    padding-right: 1rem;
+    text-align: end;
+    font-size: 0.8rem;
+}
+
+/*Code of Footer page*/
+
+.footer {
+    background-color: #414141;
+    width: 100%;
+    position: relative;
+}
+
+.footer__div,
+.footer__button,
+.footer__p {
+    color: #fff;
+    font-size: 0.7rem;
+}
+
+.footer__button {
+    background-color: transparent;
+    border: none;
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.first__button {
+    /*It is the "Site map" button*/
+    padding-left: 1rem;
+}
+
+.footer__p {
+    /*information about copyright*/
+    margin: 0rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+/*Media Queries, Responsive*/
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .header__h1 {
+        font-size: 10vw;
+        /*Responsive h1 in movil view*/
+    }
+
+    .nav__input {
+        margin: 0.5rem 1rem;
+        /*adjust separation of buttons*/
+    }
+
+    .main__p {
+        padding-left: 6vw;
+        /*Adaptative space between paragraphs and borders of box*/
+        padding-right: 6vw;
+    }
+
+    .main__img {
+        max-width: 50%;
+        /*Adjust the imagen size*/
+    }
+
+    .hidden {
+        display: none;
+        /*hidden button "Home" in the navigation bar*/
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .main__h2 {
+        position: relative;
+        /*these styles try keep the title over the paragraph*/
+        left: 8%;
+        margin-bottom: 0rem;
+    }
+
+    .main__div {
+        display: flex;
+        /*put the paragraphs beside of the img*/
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .main__article {
+        padding-bottom: 2rem;
+        /*A litle bit adjust in the bottom space*/
+    }
+
+    .div__div {
+        width: 50%;
+        align-self: center;
+    }
+
+    .main__p {
+        max-width: 45%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (min-width:1024px) {
+
+    .main,
+    .aside {
+        display: inline-block;
+        position: relative;
+    }
+
+    .main {
+        max-width: 55%;
+        margin-left: 5%;
+    }
+
+    .aside {
+        max-width: 30%;
+        float: right;
+        margin-right: 5%;
+    }
+}
+
+/*Efects of inputs in navigation bar*/
+
+.nav__input:hover,
+.nav__input:focus {
+    background-color: #ab5818;
+    box-shadow: inset 1px 1px 3px #5c3518;
+    cursor: pointer;
+}
