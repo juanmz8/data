@@ -120,10 +120,15 @@ SERVER----- (Subir el repositorio a GitHub)
 
 ## Push, Fetch y Pull (+ Git clone)
 
-    Push: Subir a los cambios al Repositorio
+Push: XD
 
-        git push origin rama (por primera vez)
-        git push
+    git remote add origin https://github.com/usuario/repositorio.git (especificar la ruta del repositorio que creamos en github)
+
+    git push origin master (actualizar por primera vez el repositorio)
+
+    git push -u origin master (Aplicar los cambios)
+
+    git push
 
     Fetch: Descarga en local el historial de cambios, pero no descarga los cambios
 
@@ -184,6 +189,18 @@ CONFLICTOS EN MERGE
         Arreglar el codigo donde surgio el conflicto
         Hacer un add y un commit con el problema solucionado
         Esto finaliza el MERGE
+
+ELIMINAR COMMITS
+
+    - Mostrar los ultimos 9 commits o menos
+        git rebase -i HEAD~9
+
+    - Borrar los commits en la hoja y aplicar los cambios de los archivos
+
+    - Hacer un push de l aisguiente manera para guardar
+        git push origin +main
+
+
 
 ## TAG
 
