@@ -200,8 +200,6 @@ ELIMINAR COMMITS
     - Hacer un push de l aisguiente manera para guardar
         git push origin +main
 
-
-
 ## TAG
 
     Ver Tags asignados

@@ -1,0 +1,144 @@
+* {box-sizing: border-box;}
+
+body {margin: 0px; background-color: #070707;}
+
+@media screen and (max-width: 430px) {
+
+/*
+SECCION 1 (ESCUCHADO RECIENTEMENTE)
+*/
+
+    .fa-gear {color:#fff;}
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        margin-bottom: 2vw;
+    }
+
+    .title__h1_a ,
+    .title__h1_b {
+        color: #ffffff;
+        font-size: 1.5rem;
+    }
+
+    .slider{
+        display: flex;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        overflow-x: scroll;
+        gap: 4vw;
+    }
+
+    .slider__img {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .slider__h2 {
+        margin-top: 5px;
+        padding-left: 2px;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+/*
+SECCION 2 (CREADOS PARA TI)
+*/
+
+    .title__h1_b {padding-left: 4vw ;}
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .grid__album {margin-bottom: 3vw;}
+
+    .album__box {position: relative;}
+
+    .box__img,
+    .box__svg {
+        width: 43vw;
+        height: 43vw;
+    }
+
+    .box__svg{
+        position: absolute;
+        opacity: 90%;
+        left: 0px;
+        top: 0px;
+    }
+
+    .box__title{
+        position: absolute;
+        bottom: 1vw;
+        left: 2vw;
+        font-weight: 600;
+    }
+
+    .album__info {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        max-width: 44vw;
+        color: #848484;
+        font-size: 1rem;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    /*SECCION 3 RECOMENDACIONES PARA TI*/
+
+    .slider__img__b {
+        width: 43vw;
+        height: 43vw;
+    }
+
+    .last__slider{
+        margin-bottom: 10vh;
+    }
+
+    /*NAV Menu*/
+
+    .nav{
+        background-color: #111;
+        display: flex;
+        width: 100vw;
+        height: 10vh;
+        position: fixed;
+        bottom: 0px;
+    }
+
+    .nav__button{
+        margin: 0px;
+        padding: 0px;
+        border-style: none;
+        background: none;
+        width: 25vw;
+        height: 10vh;
+        color: #747474;
+    }
+
+    .nav__button:active {background-color: #535353;}
+    .nav__button:focus {color: #fff;}
+
+    .nav__icon {
+        font-size: 2rem;
+        margin-bottom: 1.5vh;
+    }
+
+    .nav__text {
+        font-size: 0.7rem;
+        margin: 0px;
+    }
+}
