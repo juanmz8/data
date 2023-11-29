@@ -18,7 +18,14 @@
 - Condicional Ternario
 
 - Objetos
-- Class y Constructor
+- Getter y Setter
+- Metodos de Object
+
+- Clases
+- Herencia
+- Campos Estaticos
+- Campos Privados
+- Metodos Estaticos Privados
 
 # Array
 
@@ -336,7 +343,237 @@ LABEL
 
 # Condicionales
 
+if, else if
 
+    if (condicion) {
+        sentencias
+    } else if (condicion) {
+        sentencias
+    } else {
+        sentencias
+    }
+
+Switch
+
+    switch (operacion) {
+    case resultado1:
+        //sentencias
+        break;
+
+    case resultado2:
+        //sentencias
+        break;
+
+    default:
+        //sentencias
+        break;
+    }
+
+Operador Ternario
+
+    condition ? ifTrue : ifFalse ;
 
 # Objetos
-# Class y Constructor
+
+- Se pueden usar variables globales como propiedades
+- This es el objeto actual
+- Notacion de punto y Notacion de Corchetes para llamar propiedades/metodos
+- Crear Objetos con literales y con su Constructor :
+
+    const OBJETO = {
+        keyOne : value1,
+        globalVariable,
+        method = function (){
+            this.keyOne
+        }
+    }
+    console.log(OBJETO.keyOne)
+
+
+    const OBJETO = new Object(),
+        keyOne : value1,
+        globalVariable,
+        method = function (){
+            this.keyOne
+        }
+    ;
+    console.log(OBJETO[keyOne])
+
+## Getter y Setter
+
+- GET funcion (SIN parametro) que devuelve su resultado
+- SET funcion (CON un parametro) que modifica otras propiedades
+
+    const CALC = {
+        n : 1,
+        get multiplicar() {
+            this.n * 5;
+        },
+        set modificarPositivo(x) {
+            this.n = x + 100;
+        }
+    }
+
+¿Como definir propiedades get y set despues de crear el objeto?
+
+- Usando el metodo de Object.defineProperties()
+
+    Object.defineProperties(CALC, {
+        sumar : {
+            get : function () {
+                this.n + 5;
+            }
+        },
+        modificarNegativo : {
+            set : function (x) {
+                this.n = x - 100;
+            }
+        }
+    })
+
+Borrar una propiedad no heredada
+    - delete CALC.modificarNegativo;
+
+Comprobar si existe una propiedad
+    - console.log("sumar" in CALC);
+
+## Metodos de Object
+
+- Object.keys() //Obtiene un array de todas las key del objeto
+
+- Object.values() //Obtiene un array de todos los valores del objeto
+
+- Object.entries() //Obtiene un array de cada par key:value
+
+- Object.fromEntries() //Obtiene un objeto con los pares key:value
+
+- Object.create() //Crear un objeto a partir de otro (prototipo)
+
+    const X = {
+        a : 1;
+    };
+    const Y = Object.create(X);
+
+- Object.assign(destino,origen)
+    //Copia las propiedades (no anidadas) de uno o mas objetos
+    //Las Pega en el objeto destino
+    //Si hay keys con el mismo nombre, sus valores se sobreescriben
+    //Las propiedades no enumerables y heredadas no se pueden copiar
+
+    const objOne = { a: 1, b: 2 };
+    const objTwo = { b: 4, c: 5 };
+    console.log(Object.assign(objOne, objTwo)); // objOne =+ objTwo
+
+- Object.freeze()
+    //Impide crear propiedades
+    //Impide eliminar propiedades
+    //Impide modificar todo tipo de propiedades
+    //Impide modificar su prototipo
+
+- Object.isFrozen() //Determina si un objeto se congeló o no
+
+- Object.seal()
+    //Impide crear propiedades
+    //Impide eliminar propiedades
+    //Impide modificar las propiedades de DATOS en propiedades ACCESORAS y viceversa
+
+- Object.isSealed() //Determina si un objeto se selló o no
+
+- Object.getOwnPropertyDescriptors() //Obtiene la descripcion de todas las propiedades propias del objeto
+
+## Tipos de DESCRIPCION de las PROPIEDADES
+
+- Dato //Sus key son: configurable, enumerable, value, writable
+
+- Accesor //Sus key son: configurable, enumerable, get, set
+
+# Clases
+
+Sintaxys
+
+    class Persona {
+
+        constructor (nombre, edad) {
+            this._nombre = nombre;
+            this._edad = edad;
+            }
+        get datos() {
+            return this.nombre + this.edad
+        }
+    }
+
+- En constructor se definen los parametros
+- Los metodos van fuera del constructor
+- Las propiedades se declaran con _ para diferenciar los parametros
+
+Instanciar Clases
+
+    const Juan = new Persona ("Juan",19);
+    console.log(Juan.datos);
+
+## Herencia
+
+- Las SubClass heredan propiedades y metodos de su SuperClass general
+
+    class Policia extends Persona {
+        constructor(nombre, edad, dni) {
+            super(nombre, edad);
+            this._dni = dni;
+        }
+    }
+
+- extends habilita la herencia de Persona
+- super invoca al constructor de la clase principal (sus parametros)
+
+## Campos estaticos
+
+- Los metodos estáticos son llamados sin Instanciar su clase
+- No se pueden acceder desde una sub clase
+
+    class Ejemplo {
+        static SUMAR (n1,n2){
+            return n1 + n2;
+        }
+    }
+    const objeto = new Ejemplo()
+
+    console.log(objeto.SUMAR(5,5)) //Error
+    console.log(Ejemplo.SUMAR(10,90)) //Devuelve 100
+
+## Campos Privados
+
+- Solo son accesibles desde dentro de la propia declaracion de la clase
+- Se usa el #hash tanto para declarar y para acceder
+
+    class PropiedadPrivada {
+      #private;
+    }
+
+    class MetodoPrivado {
+      #private() {
+        return "hello world";
+      }
+    }
+
+    class PropiedadEstatica {
+      static #PRIVATE;
+    }
+
+## Metodos Estaticos Privados
+
+    class SuperClase {
+        static #MetodoPrivado() {
+            return 42;
+        }
+        static MetodoPublico1() {
+            return SuperClase.#MetodoPrivado(); //Origen
+        }
+        static MetodoPublico2() {
+            return this.#MetodoPrivado(); //Objeto actual
+        }
+    }
+
+    class subClase extends SuperClase {}
+
+    console.log(subClase.MetodoPublico1()); // 42, el metodo llama al Origen SuperClase
+    console.log(subClase.MetodoPublico2()); // TypeError, el metodo llama al objeto actual subClase

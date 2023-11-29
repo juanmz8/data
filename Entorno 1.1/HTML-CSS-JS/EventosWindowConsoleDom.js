@@ -1,35 +1,3 @@
-// P.O.O
-
-    //Sintaxis
-
-        class Persona {
-
-            constructor (nombre,apellido,edad){
-
-                this.nombre = nombre
-                this.apellido = apellido
-                this.edad = edad
-                this.saludo = `Me llamo ${nombre} ${apellido} y tengo ${edad} años.`
-            }
-
-            metodoSaludar() {
-                console.log(this.saludo)
-            }
-        }
-
-                //Instanciar el objeto | const name = new type(arguments); |
-
-                    const juan = new Persona("Juan","Miguez", 19);
-
-
-    //Maneras de acceder a los datos de las propiedades:
-
-        juan.edad   //propiedad
-        juan.saludar() //método
-
-        juan["edad"] //propiedad
-        juan["saludar"]() //método
-
 //DOM
     //Acceso a los elementos/nodos
 
@@ -48,7 +16,6 @@
         //Convertir a array con spread Operator
         const parrafosSpread = [...document.querySelectorAll(".parrafo")]
 
-//DOM
     //Modificar atributos
 
         element.getAtribute("atribute") //Obtiene el atributo de la etiqueta

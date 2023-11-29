@@ -8,6 +8,7 @@
 # Programas
 
 - Jira Service Management
+- Sentry
 - DoneDone
 - ClickUp
 - MantisHub

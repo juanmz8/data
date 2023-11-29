@@ -1,78 +1,23 @@
-OBJETOS**
-- Conceptos basicos
-- This
-- Get
-- Set
-- window/globalThis
-- Metodos de Object
-- Prototipos y Herencia
-
 RegExp
 
-FUNCIONES GLOBALES**
-- eval()
-- isFinite()
-- isNaN()
-- parseFloat()
-- parseInt()
-- encodeURI()
-- decodeURI()
-- encodeURIComponent()
-- decodeURIComponent()
+FUNCIONES GLOBALES
 
-ERRORES**
-- EvalError
-- InternalError
-- RangeError
-- ReferenceError
-- SyntaxError
-- TypeError
-- URIError
-- Error()
+ERRORES
 
-RUTAS WEB**
-- Absolutas
-- Relativas
-- URI
+RUTAS WEB
 
-Objeto map**
-- Map
-- Weak Map
-- Set
-    - size
-    - add
-    - clear
-    - delete
-    - has
-- Weak Set
+JSON
 
-JSON**
-- JSON
-- JSONLD
-
-CONDICIONALES**
-- If, else
-- Switch
-- Condicional Ternario
-
-- Funcion Anonima
-- IIFE
-- Funcion Recursiva
-- Funcion Anidada
-
-Modo estricto**
-- Invocar modo Estricto
-- Detalles
-- Funcion Estricta
-- Fuincionamiento del Modo Estricto
+Modo estricto
 
 Javascript Asincrono**
 - setTimeout
 - setInterval
 - Callbacks
     - Callback Hell
-- Promises
-    - Async / Await
+
+Promises
+- Async / Await
 
 APIs**
 - XMLHTTPRequest
@@ -84,11 +29,10 @@ Clases**
     - CommonJS
     - Modulos ECMAScript
 
-Manejo de errores**
-- Sentencia Trow     ----------------------------------
-- Try/Catch/Finally  ----------------------------------
-- Objetos de Error   ----------------------------------
-
+Manejo de errores
+- Sentencia Trow
+- Try/Catch/Finally
+- Objetos de Error
 
 **This keyword**
 - Explicit Blinding
@@ -96,10 +40,7 @@ Manejo de errores**
     - apply
     - blind
 - This
-    - en metodos
-    - en funciones
     - en eventos
-    - en arrow function
 
 **Control de Memoria**
 - Ciclo de vida de la memoria
@@ -115,113 +56,13 @@ ArrayBuffer**
 - DataView
 - Resumen
 
-# OBJETOS
-
-CONCEPTOS BASICOS
-
-    - Una propiedad es un conjunto = key:value
-        - key = string sin comillas
-        - value = cualquier cosa
-
-    - Propiedades Accessors = funciones para obtener y asignar
-        - get = Funcion sin parametros, obtiene un valor existente
-        - set = Funcion con parametros, modifica un valor existente o de entrada
-
-    - Key de varias palabras = se escribe entre comillas
-    - Notacion de punto y Notacion de corchete (.propiedad , [propiedad])
-    - Abreviatura al asignar variables como propiedades en el objeto(no hace falta escribir su value)
-
-OPERADORES ESPECIALES
-
-    in---Determina si una propiedad existe en el objeto
-
-        console.log("age" in person)
-
-    delete---Elimina la propiedad del objeto
-
-        delete person.history;
-
-OBJETO LITERAL Y CONSTRUCTOR
-
-    const userLiteral = {};
-    const userConstructor = new Object();
-
-## This
-
-    Hace referencia al objeto en cuestion, al dueño de la llamada.
-    Solo sirve con funciones tradicionales.
-
-## get
-
-    Es una funcion que obtiene un valor.
-    La funcion es llamada como una propiedad simple y no como metodo.
-
-## set
-
-    Es una funcion que recibe parametros asignados, para configurar datos.
-    La funcion es llamada como una propiedad simple pero se le asigna un valor para configurarlo (operador de asignacion =).
-
-## Global This
-
-    - El objeto global contendrá variables que deberian estar disponibles en todas partes por ejemplo objetos Array, valores especificos del entorno o como window.innerHeight (la altura de la ventana en el navegador)
-
-    - El objeto global tiene un nombre universal: globalThis, pero con mayor frecuencia se hace referencia a nombres especificos del entorno, "window" en el navegador y "global" en node.js
-
-    - Deberiamos almacenar valores en el objeto global solo si son verdaderamente globales para nuestro proyecto y manteniendo su uso al minimo
-
-    - En el navegador, a menos que estemos utilizando modulos, las funciones globales y las variables declaradas con var se convierten en propiedades del objeto global
-
-    - Para que nuetro codigo este preparado para el futuro y sea facil de entender debemos acceder a las propiedades del objeto global directamente como window.x
-
-## Metodos de Object
-
-    Object.assign()
-        Copia las propiedades de uno o más objetos, y los fusionia, tambien se puede usar spread ...
-
-    Object.values()
-        Devuelve un array que contiene todos los valores correspondientes a las propiedades enumerables de tipo string pertenecientes a un objeto dado
-
-    Object.keys()
-        Devuelve un array que contiene todos los nombres de las propiedades enumerables de tipo string pertenecientes al objeto dado
-
-    Object.entries()
-        Devuelve un array que contiene todos los pares [key, value] de las propiedades enumerables en formato string que le pertenecen a un objeto dado
-
-    Object.fromEntries()
-        Devuelve un nuevo objeto de los pares iterables [key, value]. (Este método hace lo contrario a Object.entries)
-
-    Object.freeze()
-        Impide borrar, cambiar y agregar propiedades al objeto
-
-    Object.isFrozen()
-        Determina si un objeto se congeló o no
-
-    Object.seal()
-        Impide la creacion de propiedades pero permite la modificacion de propiedades existentes
-
-    Object.create()
-        Crea un nuevo objeto con el objeto prototipal especificado y sus propiedades.
-
-## PROTOTIPOS
-
-    - Object.prototype es el prototipo de todos los objetos en JavaScript.
-    - Es el final de la cadena de prototipos.
+# PROTOTIPOS
 
     - Las propiedades y metodos son accecibles por la cadena de prototipos.
     - La cadena de prototipos solo se recorre cuando se lee una propiedad o metodo, no cuando se crea, elimina o modifica.
     - Los metodos y propiedades son definidos en la propiedad "prototype" que reside en la funcion constructora del objeto, no en la instancia misma del objeto.
 
-CREAR PROTOTIPOS
-
-```js
-        const myPrototype = { //Objeto principal (prototipo)
-            type : test
-        };
-
-        const simpleObject = Object.create(myPrototype); //Objeto nuevo que hereda del prototipo indicado
-```
-
-## RegExp
+# RegExp
 
     - Se usa para realizar funciones de busqueda y reemplazo de las coincidencia de patrones en el texto
     - Un objeto RegExp es un patron con propiedades y metodos
@@ -369,7 +210,7 @@ SINTAXIS
         - No decodifica secuencias de escape que no se puedan haber introducido por encodeURI
 
     encodeURIComponent()
-        - Reemplaza todos los caracteres ecepto los siguientes
+        - Reemplaza todos los caracteres excepto los siguientes
         - Se usa en los campos ingresados por el usuario desde formularios, enviados por POST al servidor
 
             - _ . ! ~ * ' ( )
@@ -449,16 +290,6 @@ URI
 ENDPOINTS
 
     - Se refiere a la creacion de una nueva ruta para una web
-
-# Keys
-
-Map
-
-Weak Map
-
-Set
-
-Weak Set
 
 # Datos Estructurados
 
@@ -541,161 +372,6 @@ RESUMEN
 
         ArrayBufferView es un término paraguas para todos estos tipos de vistas.
         El término BufferSource es un término general para ArrayBuffer o ArrayBufferView.
-
-# Condicionales
-
-IF ELSE
-
-    - Se pueden anidar if y condiciones
-    - Sintaxys :
-
-        if (condition) {
-            codigo
-        } else if (condition) {
-            codigo
-        } else {
-            codigo
-        }
-
-SWITCH
-
-    - Una expresion es comparada ante varios valores posibles
-    - Cada caso compara su valor con la expresion
-    - Brake finaliza la ejecucion de switch al haber coincidencia en un caso
-    - Default es opcional, se ejecuta si no se encuentra una coincidencia
-    - Se pueden ejecutar operaciones únicas con múltiples casos
-    - Sintaxys :
-
-    switch (key) {
-        case value: {
-                codigo
-            }
-            break;
-        default: {
-                codigo
-            }
-            break;
-    }
-
-CONDICIONAL TERNARIO
-
-    Si la condición es true, retorna el valor de la expr1; de lo contrario, devuelve el valor de expr2
-    No se recomienda evaluaciones multiples, usar If else
-    Obligatoriamente debe tener una expresion en caso de que sea true y false, no como ocurre en if
-
-    EVALUACION SIMPLE
-
-        condition ? expr1 : expr2;
-
-    EVALUACION MULTIPLE
-
-        condition1 ?
-        expr1 : condition(expr2) ?
-        expr3 : condition(expr4) ?
-        expr5 : expr6;
-
-# Exception Handling
-
-Sentencia Trow
-
-Try/Catch/Finally
-
-Objetos de Error
-
-# FUNCIONES
-
-Función Anonima
-
-    Es una funcion sin nombre
-    Se debe escribir dentro de parentesis si esta aislada, para convertirla en una expresion valida
-    Se pueden usar como parametros de otras funciones
-    Se pueden asignar a variables
-
-```js
-//Sintaxis
-        (function (){
-            instruction
-        });
-```
-
-IIFE
-
-    Immediately Invoked Function Expression
-    También conocido cómo función auto ejecutable
-    Se debe escribir entre parentesis
-    Asignar el IIFE a una variable almacena el resultado, no la definición de la función
-
-```js
-//Sintaxis
-        (function (){
-            console.log("Esta funcion se ejecuta inmediatamente")
-        }());
-```
-
-Función Recursiva
-
-    Se auto ejecuta como un bucle, requieren de una condicion
-
-```js
-//Sintaxis
-        function loop(x) {
-            if (x != 10) {
-                loop(x + 1)
-                console.log(x)
-            }
-        };
-
-        loop(0);
-```
-
-Función Anidada
-
-    Una funcion (A) que contiene una (B) que a su vez contiene una (C)
-    (B) puede acceder a (A) y (C) puede acceder a (B)
-    Ademas, como (B) puede acceder a (A), y (C) puede acceder a (B), (C) tambien puede acceder a (A)
-
-    Si se define una variable en un ambito interno con el mismo nombre de una variable del ambito externo, estas son unicas y funcionan solo en su propio ambito
-
-```js
-//Sintaxis
-        (function sayName() {
-            const name = "juan";
-            console.log(name),
-            (function () {
-                const name = "pepe";
-                console.log(name)
-            }())
-        }())
-```
-
-Parametros Predeterminados
-
-    Los parametros con un valor asignado son ignorados cuando la invocacion define los parametros
-    Se puede usar cualquier valor primitivo,array u objeto como valor de un parámetro predeterminado
-    Se pueden usar funciones como parametros predeterminados
-    Los parametros se nombran segun el tipo de dato que guarda
-    Los objetos que se creen con un parámetro predeterminado se crearán cada vez que se invoque la función
-    Un uso común de los parámetros predeterminados es aprovechar este comportamiento para obtener valores de objetos
-    Se recomienda dejar todos los parámetros predeterminados al final de la lista de parámetros
-    Si primero usa un parámetro predeterminado, deberá pasar explícitamente undefined al llamar a la funcion
-
-```js
-    //EJEMPLO
-
-        function text(string = "Hi") {
-            console.log(string + " how are you")
-        }
-
-        showtText() //param empty
-
-    //EJEMPLO 2 (mala practica)
-
-        function defaultFirst(number = 1, b) {
-            console.log(a + b)
-        }
-
-        defaultFirst(undefined, 2)
-```
 
 # Modo estricto
 
