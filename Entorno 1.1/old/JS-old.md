@@ -56,12 +56,6 @@ ArrayBuffer**
 - DataView
 - Resumen
 
-# PROTOTIPOS
-
-    - Las propiedades y metodos son accecibles por la cadena de prototipos.
-    - La cadena de prototipos solo se recorre cuando se lee una propiedad o metodo, no cuando se crea, elimina o modifica.
-    - Los metodos y propiedades son definidos en la propiedad "prototype" que reside en la funcion constructora del objeto, no en la instancia misma del objeto.
-
 # RegExp
 
     - Se usa para realizar funciones de busqueda y reemplazo de las coincidencia de patrones en el texto
