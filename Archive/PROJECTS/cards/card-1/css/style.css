@@ -1,0 +1,80 @@
+body {
+    background-color: #051c22;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.div {
+    background-color: #115162;
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border-radius: 1rem;
+    top: 10vh;
+}
+
+.div__div {
+    height: 6rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-image: url(/cards/card-1/img/Tracery_Texture_Light_Blue.jpg);
+    background-size: 20rem;
+}
+
+.div__img {
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -2.2rem;
+    height: 5rem;
+    width: 5rem;
+    position: relative;
+    bottom: 2.2rem;
+    display: block;
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    object-fit: cover;
+}
+
+.div__h1,
+.div__h2 {
+    text-align: center;
+    font-weight: normal;
+}
+
+.div__h1 {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.div__span, .div__h2, .data__section{
+    color: #e2e2e2;
+}
+
+.div__h2 {
+    font-size: 1rem;
+}
+
+.div__hr {
+    background-color: #0b3c49;
+    height: 0.1rem;
+    border: none;
+}
+
+.div__data {
+    margin-top: -1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.data__section {
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.data__number {
+    margin-bottom: 0rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
