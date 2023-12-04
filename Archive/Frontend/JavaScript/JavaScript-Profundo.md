@@ -4,6 +4,10 @@
 
 - Politica CORS (cross-origin resource sharing )
 
+- Control de Memoria
+- Ciclo de vida de la memoria
+- Garbage Collection
+
 - Modo estricto
 
 - Temporizadores
@@ -12,10 +16,6 @@
 - call
 - apply
 - blind
-
-- Control de Memoria
-- Ciclo de vida de la memoria
-- Garbage Collection
 
 - Herramientas de desarrollador
 - Debugging issues

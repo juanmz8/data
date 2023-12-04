@@ -634,7 +634,16 @@ Metodos
 
 # WeakMap
 
-Diferencias
+- No se puede convertir a array, no es iterable
+- No permite utilizar datos primitivos como key
+- Si el elemento no se usa, se elimina del WeakMap
+
+- Solo estan disponibles los metodos
+
+    .set()
+    .get()
+    .has()
+    .delete()
 
 # Set
 
@@ -666,4 +675,34 @@ Metodos
 
 # WeakSet
 
-Diferencias
+- No se puede convertir a array, no es iterable
+
+- No guarda datos primitivos:
+
+    String
+    Number
+    Bolean
+
+    Null
+    Undefined
+
+    Symbol
+    bigInt
+
+- Si no se usa el elemento, se elimina del set
+
+    let object = {
+        name: "Juan"
+    };
+
+    const SET = new WeakSet([object]);
+    console.log(SET);  //Devuelve el objeto que guarda set
+
+    object = null;
+    console.log(SET);  // Devuelve el set Vacio
+
+- Solo disponebles los metodos:
+
+    .add()
+    .has()
+    .delete()
