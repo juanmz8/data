@@ -16,10 +16,9 @@
 - Async y Await
 
 - API REST
-
 - API SOAP
-- API XML-RPC
 - API JSON-RPC
+- API XML-RPC
 
 # JSON
 
