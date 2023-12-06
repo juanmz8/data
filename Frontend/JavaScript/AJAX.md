@@ -1,24 +1,73 @@
 # JavaScript Asincrono
 
-- JSON
-- XMLHTTPRequest (AJAX)
-
 - Tipos de Errores
 - Objeto Error
 - Operador instanceof
 
-- Sentencia throw
-- Try , Catch
+- JSON
+- XMLHTTPRequest (AJAX)
 
-- Fetch
+- Throw
+- Try, Catch, Finally
+
 - Promise
-
-- Async y Await
+- Async, Await
+- Fetch (AJAX)
 
 - API REST
 - API SOAP
 - API JSON-RPC
 - API XML-RPC
+
+# Tipos de Errores
+
+    EvalError
+        - Ocurre con respecto a la funcion global eval()
+
+    InternalError
+        - Ocurre cuando se produce un error interno en el motor de javascript, por ejemplo "demasiada recursividad"
+
+    ReferenceError
+        - Ocurre cuando se quita la referencia a una referencia no valida
+
+    SyntaxError
+        - Error de sintaxis
+
+    RangError
+        - Ocurre cuando una variable numérica o parámetro está fuera de su rango válido
+
+    TypeError
+        - Ocurre cuando una variable o parámetro no es de un tipo válido
+
+    URIError
+        - Ocurre cuando encodeURI() o decodeURI() pasan parámetros no válidos
+
+# Objeto Error
+
+CONSTRUCTOR
+
+    const err = new Error("Mensaje sobre el error");
+
+PROPIEDADES
+
+    .message
+        - Devuelve el mensaje de error
+    .name
+        - Devuelve el nombre del error
+
+METODO
+
+    .toString()
+        - Devuelve un string que representa el objeto Error
+
+# Operador instanceof
+
+- Compara si un objeto fue creado con su constructor
+- Se utiliza en condicionales if
+
+    const texto = new String("Texto");
+
+    texto instanceof String; //true
 
 # JSON
 
@@ -137,56 +186,112 @@ EVENTOS XMLHTTPRequest
         console.log(XHR.response);
     }
 
-# Tipos de Errores
+# Throw
 
-    EvalError
-        - Ocurre con respecto a la funcion global eval()
+- Throw por si sola, lanza una excepción (error)
+- Se usa para crear errores personalizados
 
-    InternalError
-        - Ocurre cuando se produce un error interno en el motor de javascript, por ejemplo "demasiada recursividad"
+# Try, Catch, Finally
 
-    ReferenceError
-        - Ocurre cuando se quita la referencia a una referencia no valida
+¿Que representan estas Sentencias?
 
-    SyntaxError
-        - Error de sintaxis
+    Try :Intenta ejecutar una instrucción
+    Catch :Captura un error en caso de que falle el intento
+    Finally :Ejecuta una instruccion independientemente del resultado
 
-    RangError
-        - Ocurre cuando una variable numérica o parámetro está fuera de su rango válido
+- Al menos un bloque catch o finally debe estar presente
+- De esta manera existen 3 formas posibles para el bloque:
 
-    TypeError
-        - Ocurre cuando una variable o parámetro no es de un tipo válido
+Ejemplo 1:
+    try {
+        //sentencia si se lanza correctamente
+    } catch (error) {
+        //sentencia si se captura una excepción
+    };
 
-    URIError
-        - Ocurre cuando encodeURI() o decodeURI() pasan parámetros no válidos
+Ejemplo 2:
+    try {
+        //sentencia si se lanza correctamente
+    } finally {
+        //sentencia independiente del resultado
+    }
 
-# Objeto Error
+Ejemplo 3:
 
-CONSTRUCTOR
+    try {
+        //sentencia si se lanza correctamente
+    } catch (error) {
+        //sentencia si se captura una excepción
+    } finally {
+        //sentencia independiente del resultado
+    }
 
-    const err = new Error("Mensaje sobre el error");
+# Promise
 
-PROPIEDADES
+CREAR PROMISE
 
-    .message
-        - Devuelve el mensaje de error
-    .name
-        - Devuelve el nombre del error
+    - Se debe establecer :
+        - cúando es conciderada resuelta    (if)
+        - cúando es conciderada rechazada  (else)
 
-METODO
+        const doSomething = new Promise((resolve, reject) => {
+            if (condition) {
+                //Bloque que procesa la condicion de caso resolve
+            } else {
+                //Bloque que procesa la condicion de caso reject
+            }
+        });
 
-    .toString()
-        - Devuelve un string que representa el objeto Error
+CONSUMIR PROMISE
 
-# Operador instanceof
+    //Se establecen acciones a ejecutar segun el resultado de la promesa
+    //Por ultimo se llama a la promesa pasandole las acciones que debe ejecutar
 
-- Compara si un objeto fue creado con su constructor
-- Se utiliza en condicionales if
+        const successful = (resolvedValue) => {
+            //resolvedValue es el resultado de el caso resolve
+        }
 
-    const texto = new String("Texto");
+        const failed = (rejectedValue) => {
+            //rejectedValue es el resultado de el caso reject
+        }
 
-    texto instanceof String; //true
+        doSomething
+            .then(successful)
+            .catch(failed)
 
-# Sentencia Throw
+STATUS PROMISE
 
-Lanza una expresión definida por el usuario
+    pending : estado inicial, ni cumplido ni rechazado
+    fulfilled : la operación se completó con éxito
+    rejected : la operación falló
+
+# Async , Await
+
+- Generalmente se utiliza un bloque Try , Catch dentro de la funcion
+- Siempre retorna una Promise, aun cuando no se declara de manera explicita
+
+    EJEMPLO
+
+        async function example() {
+            return 1;
+        };
+
+        //Es lo mismo que:
+
+        async function example() {
+            return Promise.resolve();
+        };
+
+Await esta disponible dentro de la funcion async
+
+# Fetch
+
+- API similar a XMLHTTPRequest (peticion asincrona de recursos)
+- Esta basada en Promise / Devuelve una promise
+- Se controla con .then(respuesta) y .catch(problema)
+
+Sintaxis
+
+    fetch("https://example.com")
+        .then(data => //statement)
+        .catch(error => //statement)

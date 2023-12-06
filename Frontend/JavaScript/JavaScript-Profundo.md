@@ -10,7 +10,9 @@
 
 - Modo estricto
 
-- Temporizadores
+- Expresiones Regulares
+
+- ArrayBuffer
 
 - Explicit Blinding
 - call
@@ -22,11 +24,7 @@
 - Debugging memori leaks
 - Debugging Performance
 
-- Expresiones Regulares
-
-- ArrayBuffer
-
-# RegExp
+# Expresiones Regulares
 
     - Se usa para realizar funciones de busqueda y reemplazo de las coincidencia de patrones en el texto
     - Un objeto RegExp es un patron con propiedades y metodos
@@ -137,21 +135,6 @@ SINTAXIS
     ? : Encuentra 0 o 1 vez el elemento anterior, por ejemplo /do?/ encuentra "do" en mundo"
 
     [] : Se usa para establecer condiciones, por ejemplo /[a-c]/ , busca los caracteres a,b y c
-
-# Objeto Error
-
-    new Error()
-    - Crea un objeto error para excepciones definidas por el usuario
-    - Normalmente se crea para generarlo utilizando la palabra clave throw
-    - Se puede manejar el error usando try...catch
-
-```js
-            try {
-                throw new Error("Error custom")
-            } catch (e) {
-                console.error(e.name + " : " + e.message)        //Devuelve "Error : Error custom"
-            };
-```
 
 # RUTAS WEB
 
@@ -303,11 +286,3 @@ El modo estricto trata las equivocaciones como errores, para que se puedan descu
 - En modo estricto ECMAScript 5 se prohíbe la notación octal (La notación octal no es parte de ECMAScript 5, pero está soportada en todos los navegadores al poner como prefijo un cero al número)
 
 - El modo estricto en ECMAScript 2015 prohíbe establecer propiedades en valores primitivos.
-
-# Promesas
-
-const promise = new Promise ((resolve, reject) => {
-    if (condicion) reject(codigo a ejecutar)
-    else resolve(codigo a ejecutrar);
-})
-return promise

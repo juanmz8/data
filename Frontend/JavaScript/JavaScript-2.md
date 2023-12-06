@@ -407,7 +407,7 @@ Operador Ternario
 ## Getter y Setter
 
 - GET funcion (SIN parametro) que devuelve su resultado
-- SET funcion (CON un parametro) que modifica otras propiedades
+- SET funcion (CON parametro) que modifica otras propiedades
 
     const CALC = {
         n : 1,
@@ -488,9 +488,11 @@ Comprobar si existe una propiedad
 
 ## Tipos de DESCRIPCION de las PROPIEDADES
 
-- Dato //Sus key son: configurable, enumerable, value, writable
+- Dato //Sus key son:
+    configurable, enumerable, value, writable
 
-- Accesor //Sus key son: configurable, enumerable, get, set
+- Accesor //Sus key son:
+    configurable, enumerable, get, set
 
 # Clases
 
@@ -532,18 +534,18 @@ Instanciar Clases
 
 ## Campos estaticos
 
-- Los metodos estáticos son llamados sin Instanciar su clase
+- Los metodos estáticos son ejecutados sin Instanciar su clase
 - No se pueden acceder desde una sub clase
 
-    class Ejemplo {
+    class Objeto {
         static SUMAR (n1,n2){
             return n1 + n2;
         }
     }
-    const objeto = new Ejemplo()
+    Objeto.SUMAR(10,90)     //Devuelve 100
 
-    console.log(objeto.SUMAR(5,5)) //Error
-    console.log(Ejemplo.SUMAR(10,90)) //Devuelve 100
+    const Hijo = new Objeto()
+    Hijo.SUMAR(5,5)         //Error
 
 ## Campos Privados
 

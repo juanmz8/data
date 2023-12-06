@@ -5,6 +5,9 @@
 - Funcion Recursiva
 - Funcion Anidada
 
+- SetTimeout, clearTimeout
+- SetInterval, clearInterval
+
 - DOM (Tipos de nodos)
 - Interfaz Element (propiedades y metodos)
 - Interfaz Document (propiedades y metodos)
@@ -75,6 +78,30 @@ Ejemplo:
 - El acceso a los datos ocurre desde dentro :
 - "C" puede acceder a "B" y ésta a su vez en "A"
 - "C" tambien puede acceder en "A" gracias a "B"
+
+# setTimeout
+
+- Crea una funcion que se ejecuta cuando su Temporizador llega a 0
+
+    setTimeout(() => {
+        //Bloque de codigo con un delay de 5 segundos
+    }, 5000);
+
+clearTimeout()
+    - Elimina el delay de un setTimeout
+    - Toma como argumento la variable que guarda a setTimeout
+
+# setInvertal
+
+- Crea una funcion que se ejecuta cada vez que su temporizador llega a 0
+
+    setInterval(() => {
+        //Bloque de codigo que se Ejecuta cada 2 segundos
+    }, 2000);
+
+clearInterval()
+    - Elimina la repeticion de un setInterval
+    - Toma como argumento la variable que guarda a setInterval
 
 # DOM
 
