@@ -1,4 +1,4 @@
-# JS 2 (Estructuras de Datos)
+# JS 2 (Estructuras de Datos y Funcionalidad)
 
 - Arrays
 - Metodos de Array

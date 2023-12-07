@@ -1,4 +1,4 @@
-# JavaScript Asincrono
+# JavaScript Asincrono y APIs
 
 - Tipos de Errores
 - Objeto Error
@@ -12,7 +12,9 @@
 
 - Promise
 - Async, Await
+
 - Fetch (AJAX)
+- Objeto Request
 
 - API REST
 - API SOAP
@@ -228,11 +230,14 @@ Ejemplo 3:
 
 # Promise
 
-CREAR PROMISE
+CREAR y CONSUMIR Promise
 
-    - Se debe establecer :
-        - cúando es conciderada resuelta    (if)
-        - cúando es conciderada rechazada  (else)
+- Se debe establecer :
+- cúando es conciderada resolve    if
+- cúando es conciderada reject    else
+
+- Se establecen acciones a ejecutar segun el resultado de la promesa
+- Por ultimo se llama a la promesa pasandole las acciones que debe ejecutar
 
         const doSomething = new Promise((resolve, reject) => {
             if (condition) {
@@ -242,56 +247,116 @@ CREAR PROMISE
             }
         });
 
-CONSUMIR PROMISE
-
-    //Se establecen acciones a ejecutar segun el resultado de la promesa
-    //Por ultimo se llama a la promesa pasandole las acciones que debe ejecutar
-
         const successful = (resolvedValue) => {
-            //resolvedValue es el resultado de el caso resolve
+            //resolvedValue es el resultado de la operacion resolve
         }
 
         const failed = (rejectedValue) => {
-            //rejectedValue es el resultado de el caso reject
+            //rejectedValue es el resultado de la operacion reject
         }
 
         doSomething
             .then(successful)
             .catch(failed)
 
-STATUS PROMISE
+STATUS
 
     pending : estado inicial, ni cumplido ni rechazado
     fulfilled : la operación se completó con éxito
     rejected : la operación falló
 
+Informacion:
+
+- Las promesas llaman a sus controladores ".then" o ".catch" cuando el estado cambia de "pending"
+- Los controladores manejan la informacion que obtuvo la Promise
+- El metodo .then toma maximo 2 argumentos callback, el primero en caso resolve y el segundo en caso reject
+- Los metodos .then se procesan en cadena aun cuando no se devuelve la respuesta, solo frenará en el .catch final
+
 # Async , Await
 
-- Generalmente se utiliza un bloque Try , Catch dentro de la funcion
-- Siempre retorna una Promise, aun cuando no se declara de manera explicita
+- Async devuelve un Promise, la cual obtiene un valor resolve o reject
+- Async puede contener una sentencia await, la cual espera a la resolucion de la Promise y luego reanuda la ejecucion para devolver el valor obtenido
 
-    EJEMPLO
+- Las funciones asincronas Simplifican el uso de Promise
 
-        async function example() {
-            return 1;
-        };
-
-        //Es lo mismo que:
-
-        async function example() {
-            return Promise.resolve();
-        };
-
-Await esta disponible dentro de la funcion async
+    async function display() {
+      let myPromise = new Promise(resolve () => {
+        resolve("Work Done!!");
+      });
+      document.getElementById("pharagraph").innerHTML = await myPromise;
+    }
+    display();
 
 # Fetch
 
 - API similar a XMLHTTPRequest (peticion asincrona de recursos)
-- Esta basada en Promise / Devuelve una promise
+- Esta basada en Promise / Devuelve una promesa
 - Se controla con .then(respuesta) y .catch(problema)
+- A su vez; .then y .catch funcionan con async await
 
 Sintaxis
 
     fetch("https://example.com")
         .then(data => //statement)
         .catch(error => //statement)
+
+# Objeto Request
+
+- Request puede contener 2 parametros
+
+    const REQUEST = new Request("http://api.com", CONFIGURACION)
+
+    - CONFIGURACION : objeto que contiene los settings para aplicar en la llamada:
+
+        - method : Por defecto "GET"
+            - "POST"
+            - "HEAD"
+            - "PUT"
+            - "DELETE"
+            - "PATCH"
+
+        - headers : Cabeceras de la peticion
+            - autenticacion
+            - Caché
+            - Cockies, etc
+
+        - body : Tipo de cuerpo, usando "HEAD" o "GET" la peticion no tiene cuerpo
+            - Blob
+            - FromData
+            - DataView, etc
+
+        - mode : Modo de uso, por defecto "cors"
+            - no-cors
+            - same-origin
+            - navigate
+
+        - credentials : Por defecto "same-origin"
+            - omit
+            - include
+
+        - cache : Modo de caché
+            - no-store
+            - reload
+            - no-cache
+            - force-cache
+            - only-if-cached
+
+        - redirect : Modo de redireccion, por defecto "follow"
+            - error
+            - manual
+
+        - referrer :
+            - no-referrer
+            - client
+
+        - referrerPolicy : String que rellena el encabezado de referencia durante determinadas acciones
+        - integrity : Contiene los valores de sub recursos de integridad de la peticion
+        - keepalive : Boleano que indica si debe establecer una conexión persistente para varias solicitudes o respuestas.
+        - signal : Un objeto AbortSignal que se usa para comunicarse con una solicitud o anularla.
+
+        - priority : Define la prioridad de la peticion frente a otras del mismo tipo
+            - high
+            - low
+            - auto
+
+# API REST
