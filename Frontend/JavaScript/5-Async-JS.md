@@ -1,4 +1,4 @@
-# JavaScript Asincrono y APIs
+# JS 5 JavaScript Asincrono
 
 - Tipos de Errores
 - Objeto Error
@@ -15,11 +15,6 @@
 
 - Fetch (AJAX)
 - Objeto Request
-
-- API REST
-- API SOAP
-- API JSON-RPC
-- API XML-RPC
 
 # Tipos de Errores
 
@@ -358,5 +353,3 @@ Sintaxis
             - high
             - low
             - auto
-
-# API REST

@@ -1,4 +1,4 @@
-# JS 1 (Datos y Operaciones basicas)
+# JS 1 Datos y Operaciones basicas
 
 - Variables
 - Tipos de Datos

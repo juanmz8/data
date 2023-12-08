@@ -1,8 +1,8 @@
+# JS 7 Deep Learning
+
 - Modulos en JS
 - ECMAScript Modules
 - CommonJS
-
-- Politica CORS (cross-origin resource sharing )
 
 - Control de Memoria
 - Ciclo de vida de la memoria
@@ -136,39 +136,6 @@ SINTAXIS
 
     [] : Se usa para establecer condiciones, por ejemplo /[a-c]/ , busca los caracteres a,b y c
 
-# RUTAS WEB
-
-RUTAS ABSOLUTAS (Enlaces externos)
-
-    Suelen tener protocolo HTTP o HTTPS, son unicas en la red
-    Se usan para rutas externas, es decir que no estan en nuestro archivo
-
-RUTAS RELATIVAS (Enlaces Internos)
-
-    Tipo 1 : Dentro de una misma carpeta
-    Tipo 2 : Entre diferentes carpetas (niveles)
-
-URI (Uniform Resource Identifier)
-
-    Puede ser URL, URN o ambos:
-
-        URN
-            Uniform Resource Name
-            Identifica el nombre del recurso que se quiere recuperar
-            Comienzan con el prefijo "urn:"
-
-        URL
-            Uniform Resource Locator
-            Identifica la ubicacion del recurso que se quiere recuperar
-            Estructura completa URL :
-
-                Protocolo - AUTORIDAD - SERVIDOR - PUERTO - DIRECTORIO - RUTA - CONSULTA - FRAGMENTO
-
-                https://www.aritmetrics.com/blog/
-
-ENDPOINTS
-    - Se refiere a la creacion de una nueva ruta para una web
-
 # ArrayBuffer
 
 ArrayBuffer
@@ -181,7 +148,7 @@ ArrayBuffer
 
         Ejemplo:
 ```js
-        const buffer = new ArrayBuffer(16); // crea un buffer de longitud 16
+        const buffer = new ArrayBuffer(16); // crea un buffer de 16 bytes
         console.log(buffer.byteLength); // 16
 ```
 

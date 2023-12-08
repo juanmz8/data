@@ -1,4 +1,4 @@
-# JS 3 (Funcionalidad e Interfaz)
+# 4-Interfaces, Eventos y Funcionalidad
 
 - Funcion IIFE
 - Funcion Anonima
