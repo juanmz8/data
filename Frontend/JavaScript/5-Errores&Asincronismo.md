@@ -4,16 +4,16 @@
 - Objeto Error
 - Operador instanceof
 
-- JSON
-- XMLHTTPRequest (AJAX)
-
 - Throw
 - Try, Catch, Finally
+
+- JSON
+- XMLHTTPRequest
 
 - Promise
 - Async, Await
 
-- Fetch (AJAX)
+- Fetch
 - Objeto Request
 
 # Tipos de Errores
@@ -65,6 +65,46 @@ METODO
     const texto = new String("Texto");
 
     texto instanceof String; //true
+
+# Throw
+
+- Throw por si sola, lanza una excepción (error)
+- Se usa para crear errores personalizados
+
+# Try, Catch, Finally
+
+¿Que representan estas Sentencias?
+
+    Try :Intenta ejecutar una instrucción
+    Catch :Captura un error en caso de que falle el intento
+    Finally :Ejecuta una instruccion independientemente del resultado
+
+- Al menos un bloque catch o finally debe estar presente
+- De esta manera existen 3 formas posibles para el bloque:
+
+Ejemplo 1:
+    try {
+        //sentencia si se lanza correctamente
+    } catch (error) {
+        //sentencia si se captura una excepción
+    };
+
+Ejemplo 2:
+    try {
+        //sentencia si se lanza correctamente
+    } finally {
+        //sentencia independiente del resultado
+    }
+
+Ejemplo 3:
+
+    try {
+        //sentencia si se lanza correctamente
+    } catch (error) {
+        //sentencia si se captura una excepción
+    } finally {
+        //sentencia independiente del resultado
+    }
 
 # JSON
 
@@ -181,46 +221,6 @@ EVENTOS XMLHTTPRequest
 
     XHR.onload = () => {
         console.log(XHR.response);
-    }
-
-# Throw
-
-- Throw por si sola, lanza una excepción (error)
-- Se usa para crear errores personalizados
-
-# Try, Catch, Finally
-
-¿Que representan estas Sentencias?
-
-    Try :Intenta ejecutar una instrucción
-    Catch :Captura un error en caso de que falle el intento
-    Finally :Ejecuta una instruccion independientemente del resultado
-
-- Al menos un bloque catch o finally debe estar presente
-- De esta manera existen 3 formas posibles para el bloque:
-
-Ejemplo 1:
-    try {
-        //sentencia si se lanza correctamente
-    } catch (error) {
-        //sentencia si se captura una excepción
-    };
-
-Ejemplo 2:
-    try {
-        //sentencia si se lanza correctamente
-    } finally {
-        //sentencia independiente del resultado
-    }
-
-Ejemplo 3:
-
-    try {
-        //sentencia si se lanza correctamente
-    } catch (error) {
-        //sentencia si se captura una excepción
-    } finally {
-        //sentencia independiente del resultado
     }
 
 # Promise

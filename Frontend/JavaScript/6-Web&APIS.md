@@ -1,24 +1,40 @@
-# JS 6 APIs y Servicios Web
+# JS 6 Protocolos WEB, APIS y Arquitecturas
+
+- URI, URL, URN
+- Codigos de respuesta
+- Metodos HTTP
 
 - Arquitectura REST
 - API REST
 
 - SOAP (Simple Object Access Protocol)
 
-- URL
-- URI
-- URN
-
 - API GraphQL
 - API gRCP
 - API Web Sockets
 - API Web Hooks
 
-- Politica CORS (cross-origin resource sharing )
+# URI, URL, URN
+
+# Codigos de respuesta
+
+    1XX: Respuestas informativas
+    2XX: Peticiones correctas
+    3XX: Redirecciones
+    4XX: Errores del cliente
+    5XX: Errores del servidor
+
+# Metodos HTTP
+
+    GET: Solicita información de recursos
+    POST: Creación de nuevos recursos
+    PUT: Actualiza un recurso existente en su totalidad
+    PATCH: Actualiza un recurso existente parcialmente
+    DELETE: Elimina un recurso existente
 
 # Arquitectura REST
 
-PRINCIPIOS REST
+PRINCIPIOS
 
     1.Cliente-servidor
         El cliente y el servidor deben estar completamente separados e independientes
@@ -37,30 +53,7 @@ PRINCIPIOS REST
     4.Uso correcto de Protocolos HTTP
         REST debe respetar los metodos y códigos de estado para cada operación
 
-REGLAS DE DISEÑO
-
-    - Uso correcto de Metodos y código de estado HTTP
-    - Usar sustantivos para referirse a recursos, no verbos
-    - Usar plurales para los recursos de la colección
-    - Usar URL anidadas cuando exista una jerarquía o relación clara entre recursos
-
-USO DE METODOS CORRECTOS
-
-    GET: Solicita información de recursos
-    POST: Creación de nuevos recursos
-    PUT: Actualiza un recurso existente en su totalidad
-    PATCH: Actualiza un recurso existente parcialmente
-    DELETE: Elimina un recurso existente
-
-CODIGOS DE ESTADO CORRECTOS
-
-    1XX: Respuestas informativas
-    2XX: Peticiones correctas
-    3XX: Redirecciones
-    4XX: Errores del cliente
-    5XX: Errores del servidor
-
-SEGURIDAD EN API REST
+SEGURIDAD
 
     Control de acceso
         Garantizar que los clientes solo puedan acceder a la funcionalidad y los datos para los que se les ha otorgado permiso
@@ -82,5 +75,12 @@ SEGURIDAD EN API REST
     Uso de mecanismos de autenticación y autorización
         Su funcion es identificar el acceso de clientes a la API y sus recursos
         Existen mecanismos establecidos como OAuth 2.0 y JSON Web Tokens (JWT)
+
+DISEÑO
+
+    - Uso correcto de Metodos y código de estado HTTP
+    - Usar sustantivos para referirse a recursos, no verbos
+    - Usar plurales para los recursos de la colección
+    - Usar URL anidadas cuando exista una jerarquía o relación clara entre recursos
 
 # API REST
