@@ -7,28 +7,28 @@ Instalar gulp por unica vez :
 # Preparar el entorno
 
 1 Crear el archivo package.json :
-- npm init
+    - npm init
 
 2 Crea la carpeta node-modules y archivo package-lock.json :
-- npm install --save-dev gulp
+    - npm install --save-dev gulp
 
 3 Dependencias de babel crea un archivo :
-- npm install --save-dev @babel/core @babel/register @babel/preset-env
+    - npm install --save-dev @babel/core @babel/register @babel/preset-env
 
 
 # Transpilar JavaScript
 
 gulp-babel: Este es el modulo que usara para convertir el codigo a ES5
 
-- npm install --save-dev gulp-babel
+    - npm install --save-dev gulp-babel
 
 gulp-terser: Es la nueva version de uglify, sirve para ofuscar codigo
 
-- npm install --save-dev gulp-terser
+    - npm install --save-dev gulp-terser
 
 gulp-concat: Une todos nuestros archivos en uno solo
 
-- npm install --save-dev gulp-concat
+    - npm install --save-dev gulp-concat
 
 # Archivos necesarios
 

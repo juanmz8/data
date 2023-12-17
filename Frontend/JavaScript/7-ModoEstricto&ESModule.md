@@ -1,7 +1,7 @@
-# JS 7 Modo Estricto y Modulos
+# JS 7 Modo Estricto y ES Modules
 
 - Modo Estricto
-- Modulos en JS Nativo
+- ES6 Modules
 - Politica CORS (cross-origin resource sharing)
 
 - Control de Memoria
@@ -43,7 +43,7 @@ Activar Modo Estricto
             console.log("Ejemplo");
         }
 
-# Modulos en JS Nativo
+# ES6 Modules
 
 CARACTERISTICAS PRINCIPALES
 
@@ -58,25 +58,17 @@ CARACTERISTICAS PRINCIPALES
 
 SINTAXIS de Export
 
-    //Se puede exportar codigo en linea o usar su nombre de referencia
-
-        export const customFn = (x) => console.log(x * x / 50);
-
-        export { customfn };
+    export const customFn = (x) => console.log(x * x / 50);
 
 SINTAXIS de Import
 
     //Importar todos los elementos que hayan sido exportados de un modulo
 
-        import * as aliasOfModule from "/folder/module.js";
-
-    //Llamar cualquier elemento importado mediante el alias del modulo
-
-        aliasModule.customFn(10);
+        import * as aliasDelModulo from "/modulo.js";
 
     //Importar uno o más elementos de un modulo
 
-        import { customFn, otherFn } from "/folder/module.js";
+        import { customFn, otherFn } from "./module.js";
 
 SINTAXIS en el archivo HTML
 

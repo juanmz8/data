@@ -1,31 +1,29 @@
-# Preprocesadores (Atajos de sintaxys y productividad)
+# Preprocesadores
+    - HTML
+        - PUG
+        - SLIM
 
-- html
-    - PUG (antes jade)
-    - SLIM
+    - CSS
+        - SASS
+        - LESS
+        - STYLUS
+        - POSTCSS + plugins (Autoprefixer, CSSnano, purgeCSS, PostCSSimport)
 
-- CSS
-    - SASS
-    - LESS
-    - STYLUS
-    - POSTCSS + plugins (Autoprefixer, CSSnano, purgeCSS, PostCSSimport)
-
-# Minificacion (optimizar el codigo, eliminar espacios en blanco)
-
-Minfy web
+# Minificacion
+    - Minfy web
 
 # Compilador
-- Prepros
+    - Prepros
 
-# Transpilador (traduccion de lenguajes del mismo nivel)
-- Babel
+# Transpilador
+    - Babel
 
-# Task Runner (automatizacion de tareas)
-- GULP
-- YARN
-- GRUNT
+# Task Runner
+    - GULP
+    - YARN
+    - GRUNT
 
-# Module Bundlers (empaquetador de modulos)
-- Webpack
-- Rollup
-- <Parcel
+# Module Bundlers
+    - Webpack
+    - Rollup
+    - Parcel
