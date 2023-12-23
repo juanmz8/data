@@ -1,4 +1,4 @@
-# Evoución del codigo
+# Estancias del codigo
 
 Editor de Texto----- (Archivos locales)
 STAGE----- (Guardar los archivos con cambios)
@@ -12,14 +12,15 @@ SERVER----- (Subir el repositorio a GitHub)
         Release
         Develop
             Feature
-                Example Feature
+                Example Feature1
+                Example Feature2
 
 # Usos de Git
 
     Historial de versiones en el archivo
-    Trabajar en equipo
-    Encontrar la version (comit) donde se introdujo un error
-    Almacenar codigo
+    Trabajar un proyecto en equipo
+    Encontrar la version (comit) donde se produjo un error
+    Almacenar codigo en gitHub
 
 - Crear un archivo .env para Variables de Desarrollo
 
@@ -81,7 +82,7 @@ SERVER----- (Subir el repositorio a GitHub)
         mv "Folder Example"/index.html "Folder Example"/indice.html
 
     Renombrar y/o Mover Archivos + añadirlos a STAGE
-        git mv "Folder Example"/index.html "Folder Example"/indice.html
+        git mv Folder1/index.html Folder2/indice.html
 
 ## VISUALIZACION
 
@@ -104,7 +105,7 @@ SERVER----- (Subir el repositorio a GitHub)
         git log
         git log --oneline
 
-    Ver historial de todos los CAMBIOS
+    Ver historial de CAMBIOS (incluyendo commits eliminados)
         git reflog
 
 ## ADD y COMMIT
@@ -115,12 +116,9 @@ SERVER----- (Subir el repositorio a GitHub)
     Añadir cambios a COMMIT
         git commit -m "Descripcion del cambio"
 
-    Actualizar los cambios en el COMMIT
-        git commit
-
 ## Push, Fetch y Pull (+ Git clone)
 
-Push: XD
+Push
 
     git remote add origin https://github.com/usuario/repositorio.git (especificar la ruta del repositorio que creamos en github)
 
@@ -130,17 +128,17 @@ Push: XD
 
     git push
 
-    Fetch: Descarga en local el historial de cambios, pero no descarga los cambios
+Fetch
 
-        git fetch
+    git fetch (Descarga en local el historial de cambios, pero no descarga los cambios)
 
-    Pull: Traer los cambios del repositorio
+Pull
 
-        git pull origin rama
+    git pull origin rama (Traer los cambios del repositorio)
 
-    clone: Copiar la url SSH del repositorio en Git Hub e iniciar git bash en donde queremos descargar el repositorio
+clone
 
-        git clone urlDeGitHub
+    git clone urlDeGitHub (Copiar la url SSH del repositorio en Git Hub e iniciar git bash en donde queremos descargar el repositorio)
 
 ## Fork Git Hub
 
@@ -186,9 +184,9 @@ CONFLICTOS EN MERGE
 
     Solucion:
 
-        Arreglar el codigo donde surgio el conflicto
-        Hacer un add y un commit con el problema solucionado
-        Esto finaliza el MERGE
+        1.Arreglar el codigo donde surgio el conflicto
+        2.Hacer un add y un commit con el problema solucionado
+        3.Esto finaliza el MERGE
 
 ELIMINAR COMMITS
 
@@ -197,7 +195,7 @@ ELIMINAR COMMITS
 
     - Borrar los commits en la hoja y aplicar los cambios de los archivos
 
-    - Hacer un push de l aisguiente manera para guardar
+    - Hacer un push de la siguiente manera para guardar
         git push origin +main
 
 ## TAG
@@ -230,7 +228,7 @@ Stash es guardar un cambio pero sin necesidad de hacer commit, se guarda localme
 
 # KEY SSH
 
-1-    Abrir Git Bash desde la carpeta .shh en User/
+1-    Abrir Git Bash desde la carpeta .shh en /User
 
 2-    Comprobar si hay claves SSH existentes
 
