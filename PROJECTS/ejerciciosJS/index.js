@@ -1,4 +1,5 @@
-//Crear n cantidad de Numeros, con valores aleatorios y promediarlos
+//1.Crear n cantidad de Numeros, con valores aleatorios y obtener promedio
+
 /* let numeros = [];
 
 const obtenerNumeros = (cantidad) => {

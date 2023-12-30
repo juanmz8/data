@@ -1,4 +1,4 @@
-# Utilidades y contexto
+# Utilidades y Contexto
 
 - <a></a>
    Crea un hiperlink
@@ -65,7 +65,7 @@
 - <sup></sup> //Crea un Super-indice
 - <time></time> //Representa un periodo de tiempo especifico
 
-# Secciones de una pagina
+# Estructura de secciones
 
 - <article></article> //Contenido independiente de una pagina
 - <aside></aside> //Contenido relacionado con el contenido principal de la pagina
@@ -77,7 +77,7 @@
 - <secction></secction> //Contiene una seccion de la pagina
 - <span></span> //Agrupa elementos inline y texto
 
-# MULTI MEDIA
+# Multimedia
 
 - <audio></audio>
    - Inserta contenido de audio
@@ -127,7 +127,7 @@
 
 - <video></video> //Crea un reproductor de video
 
-# Estilos
+# Estilos y decoraciones
 
 - <b></b> //Estila texto en bold
 - <i></i> //Estila texto en italic
@@ -140,7 +140,7 @@
 - <pre></pre> //Muestra texto exactamente como fue asignado en el documento
 - <progress></progress> //Crea una barra de progreso horizontal
 
-# Formulario
+# Formularios
 
 - <button></button>
    - Crea un boton clickable

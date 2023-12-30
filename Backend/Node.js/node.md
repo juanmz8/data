@@ -1,11 +1,11 @@
 # Node JS
-Detalles de Node
-Arquitectura Node
-Objeto Process
 
-CommonJS
-ECMAScript Modules
-Dependencias de Desarrollo y Produccion
+    Detalles de Node
+    Arquitectura Node
+    Objeto Process
+    CommonJS
+    ECMAScript Modules
+    Dependencias de Desarrollo y Produccion
 
 # Detalles de Node
 
