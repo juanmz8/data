@@ -27,12 +27,12 @@ Media Types:
     screen: Destinado principalmente a las pantallas.
     speech: Destinado a sintetizadores de voz.
 
-Operadores:
+operator:
 
     and > Se activa solo si se cumple un breakpoint
     or > Funciona si se cumple uno u otro breakpoint especificado, usar comas en vez de or cumple el mismo efecto
     not > Funciona si no se cumple la condicion
-    only > Previene que navegadores antiguos sin soporte de queries con funciones apliquen los estilos asignados
+    only > Previene que navegadores antiguos sin soporte de "queries" con funciones apliquen los estilos asignados
 
 Sintaxys teorica:
 
