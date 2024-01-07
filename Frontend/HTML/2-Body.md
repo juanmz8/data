@@ -5,7 +5,7 @@
    Atributos:
 
    download=""
-   //Valores: Una url para descargar
+   //Valores: Una url para descargar un recurso LOCAL
 
    href=""
    //Valores: Una url o id para navegar
@@ -113,6 +113,7 @@
    - Coloca una imagen
    - Atributos:
 
+      loading="lazy" //Carga la imagen con un retraso
       usemap="" //Nombre #hash que utiliza un elemento <map> para refencia
 
 - <map></map>
@@ -131,9 +132,9 @@
 
 - <b></b> //Estila texto en bold
 - <i></i> //Estila texto en italic
-- <em></em> //Estila texto en cursivo
+- <em></em> //Contenido importante
 - <u></u> //Estila texto con guion bajo
-- <small></small> //Estila texto en letra chica
+- <small></small> //Contenido sin importancia
 - <del><del> //Estila texto tachado
 - <kbd></kbd> //Dibuja una tecla con texto
 - <mark></mark> //Crea un resaltado en el texto
@@ -246,7 +247,7 @@
 - <datalist></datalist> //Crea una lista de opciones usando el atributo [value=""]
 
 - <dd></dd> //Crea descripciones en una lista
-- <details></details> //Crea una seccion desplegable
+- <details></details> //Crea una lista desplegable de informacion
 - <dl></dl> //Crea una lista descriptiva
 - <dt></dt> //Crea datos o terminos en una lista
 

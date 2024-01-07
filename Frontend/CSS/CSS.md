@@ -612,6 +612,7 @@ Se pueden aplicar varios a la vez, se usa en imagenes, fondos o bordes
     }
 
     - Position relative en el padre y relative en sus hijos
+    - Usar "aspect-ratio: ;" para arreglar imagenes
 
 ### FALLBACK
 

@@ -14,8 +14,8 @@
 
 >Variables y Arrays
 
-    $nombre = "Juan";
-    $nombres = array("jose","juan","pablo");
+    $miVariable = "Juan";
+    $miArray = array("jose","juan","pablo");
 
 >>Otra manera de definir arrays
 
@@ -29,20 +29,20 @@
 
 >Imprimir
 
-    echo $nombre;
-    echo APELLIDOS;
+    echo $variable; //imprime una variable
+    echo APELLIDOS; //Imprime una constante
 
 # GET
 
 >Muestra los valores en la url, se puede marcar la pagina
 
-    $color = $_GET["inputName"];
+    $color = $_GET["atributi Name="" del Input"];
 
 # POST
 
 >No muestra los valores por la url
 
-    $color = $_POST["inputName"];
+    $color = $_POST["atributi Name="" del Input"];
 
 # Funciones de PHP
 
@@ -82,7 +82,8 @@ Ejemplo Exepcion Throw:
             return $lado * $lado;
         }
     }
-    areaCuadrado($miLado);     // Devuelve: Uncaught exception 'Exception' with message 'Debes insertar un número positivo'
+    areaCuadrado($miLado);
+    // Devuelve: Uncaught exception 'Exception' with message 'Debes insertar un número positivo'
 
 # PDO (objeto de Datos de PHP)
 
@@ -102,11 +103,10 @@ __password__
 
 __options__
 Array con parámetros adicionales para la conexión
+
     PDO::MYSQL_ATTR_INIT_COMMAND //especificar un comando inicial para la conexión
     PDO::ATTR_DEFAULT_FETCH_MODE //establecer el formato en que se devuelven los datos
 
 >Ejemplo
 
     $pdo = new PDO("mysql:host=localhost; dbname=sqlfile; charset=utf8","root", "");
-
-> Otro ejemplo

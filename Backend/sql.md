@@ -23,7 +23,7 @@
 >Crear Tablas
 
     CREATE TABLE myDataBase (
-        id int,                     //Nombre del campo y tipo de dato
+        identificador int,                     //Nombre del campo y tipo de dato
         usuario varchar (255),      //Nombre del campo y tipo de dato
         estado varchar (255),       //Nombre del campo y tipo de dato
         PRIMARY KEY (id)            //Su parametro es el campo ID para usar el id como una llave primaria
@@ -35,7 +35,8 @@
     VALUES("Juanx1234","feliz")               //Se indican los valores para los campos anteriores
 
 >ALTER TABLE
+
 - Se usa para agregar, eliminar o modificar columnas en una tabla existente
 
-    ALTER TABLE myDataBase MODIFY COLUMN id int auto_increment;
+    ALTER TABLE myDataBase MODIFY COLUMN identificador int auto_increment;
     SHOW CREATE TABLE myDataBase;
