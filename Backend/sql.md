@@ -1,42 +1,116 @@
-# Atajos de teclado
+- Conceptos de SQL
+- Comandos de Terminal SQL
+- Introduccion
+- Tablas
 
-(ctrl + Intro) para ejecutar las consultas en sql
+# Conceptos de SQL
 
-    --Comentario sql--
+    - Tables
+        Estructura de columnas filas que representan informacion
+        Cada fila de informacion se llama Registro
 
->Crear la base de datos
-    create database myDataBase;
+    - Views
+        Representan datos obtenidos mediante consultas de otras tablas
+        Permite simplificar consultas complejas
+        Permite reutilizar consultas frecuentes
+        Permiten optimizar el rendimiento almacenando en cache resultados de una vista
+        Dar acceso a una vista en lugar de una tabla mejora la seguridad restringiendo el acceso
 
->Inidicar que base de datos usar
-    use myDataBase;
+    - Stored Procedures
+        Instrucciones SQL predefinidas que realizan operaciones en la base de datos
+        No necesariamente devuelve algun valor
+        Puede realizar operaciones de modificacion de datos
 
->Mostrar todas las bases de datos
-    show databases;
+    - Functions
+        Realizan operaciones especificas y devuelven un valor
+        No puede afectar la base de datos
+        Se utilizan para operaciones de solo lectura
 
-# Tablas
+# Comandos de Terminal
 
-- Tipos de datos :
-    - int       //numeros enteros
-    - float     //numeros con coma
-    - varchar() //string, su parametro indica un numero de caracteres maximos que puede recibir
+    ctrl + C //Cancelar comandos actuales
+    ctrl + Q //Salir de la terminal
+    \W       //Activar las alertas en cada sentencia
+    \w       //Desctivar las alertas en cada sentencia
+    \status  //Mostrar informacion del servidor
 
->Crear Tablas
+# Introduccion (Crear, Eliminar, Usar y Mostrar)
 
-    CREATE TABLE myDataBase (
-        identificador int,                     //Nombre del campo y tipo de dato
-        usuario varchar (255),      //Nombre del campo y tipo de dato
-        estado varchar (255),       //Nombre del campo y tipo de dato
-        PRIMARY KEY (id)            //Su parametro es el campo ID para usar el id como una llave primaria
-        )
+- Crear una base de datos
+    CREATE DATABASE myData;
 
->Insertar datos en las tablas
+- Ver todas las bases de datos
+    SHOW DATABASES;
 
-    INSERT INTO myDataBase(usuario, estado)   //Se indica que campo se quiere llenar
-    VALUES("Juanx1234","feliz")               //Se indican los valores para los campos anteriores
+- Usar una base de datos
+    USE myData;
 
->ALTER TABLE
+- Eliminar una base de datos
+    DROP DATABASE myData;
 
-- Se usa para agregar, eliminar o modificar columnas en una tabla existente
+# Comandos para Tablas
 
-    ALTER TABLE myDataBase MODIFY COLUMN identificador int auto_increment;
-    SHOW CREATE TABLE myDataBase;
+- Tipos de datos SQL
+
+    - CHAR(n)    //String con una longitud fija de n
+    - VARCHAR(n) //String con longitud maxima de n
+
+    - BOOL       //Boleano
+
+    - INT        //Numeros enteros
+    - FLOAT      //Numeros con coma
+
+    - DATE       //Fecha
+    - TIME       //Hora
+    - DATETIME   //Combinacion fecha + hora
+
+- Crear Tablas (2 opciones)
+
+    CREATE TABLE users (
+        userId [tipo-de-dato],
+        userName [tipo-de-dato],
+        PRIMARY KEY (userId)
+    );
+
+    CREATE TABLE users (
+        userId [tipo-de-dato] PRIMARY KEY,
+        userName [tipo-de-dato]
+    );
+
+- Asociar una columna entre tablas
+
+    CREATE TABLE departamentos (
+        departamentoID [tipo-de-dato] PRIMARY KEY,
+        departamentoNombre [tipo-de-dato],
+    );
+
+    CREATE TABLE empleados (
+        empleadoID [tipo-de-dato] PRIMARY KEY,
+        empleadoNombre [tipo-de-dato],
+        departamentoID [tipo-de-dato],
+        FOREING KEY (departamentoID) REFERENCES departamentos(departamentoID)
+    );
+
+    CREATE TABLE acceso (
+        empleadoID [tipo-de-dato],
+        contraseña [tipo-de-dato],
+        FOREING KEY (empleadoID) REFERENCES empleados(empleadoID)
+    );
+
+- Insertar Datos en una tabla
+
+    INSERT INTO [tabla] ([columna1],[columna2])
+    VALUES ([dato1],[dato2]);
+
+- Ver estructura de tabla (2 Opciones)
+
+    DESC acceso;
+    DESCRIBE acceso;
+
+- Ver informacion de una tabla
+
+    SELECT [columnas-de-tabla] FROM [tabla];
+
+- Ver Registros de una tabla
+
+    SELECT COUNT([columnas]) FROM [tabla];

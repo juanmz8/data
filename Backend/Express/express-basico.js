@@ -6,8 +6,10 @@
 5. Middlewares, que son y como usarlos  (middleware)
 6. Secciones de una URL                 (url path)
 7. Configuracion de express             (set, get)
-8. Servir Archivos Estaticos            (express.static())
+8. Servir HTML Estaticos                (express.static())
 9. Router, modularizacion               (express.router())
+10.Servir HTML dinamicos EJS            (View engine/Template engine)
+11.Concetar Express a una DB            (Bases de datos sql)
 . Organizacion de codigo
 */
 
@@ -55,7 +57,7 @@
    res.sendStatus()//Envia solamente un codigo de estado al cliente
 
    res.json() //Envia especificamente respuestas en formato json, automaticamente parsea un objeto con JSON.stringify()
-   res.render()//Devuelve una vista, comunmente motores de plantillas como Pug, EJS o HandleBars
+   res.render()//Devuelve una view, comunmente motores de plantillas como PUG, EJS o HandleBars
 
    res.download()//Envia un archio estatico sugiriendo al navegador descargarlo en lugar de mostrarlo
    res.redirect()//Se utiliza para redireccionar al cliente a otra URL, por ejemplo despues de completar un Loggin
@@ -131,12 +133,12 @@
 //7 Configuracion de express
 
    //Crear una variable de app y usarla
-   app.set("Clave", "Valor");
-   app.get("Clave");
+   app.set("NombreDeVariable", "valor de Variable");
+   app.get("NombreDeVariable");
 
-   //Configuracion reservada de express
-   app.set("case sensitive routing", true)
-   app.set("view engine", "ejs"); //Usar el motor ejs
+   app.set("case sensitive routing", true)//Configuracion para paths case sensitive
+   app.set("view engine", "ejs" ); //Habilitar el uso del motor ejs
+   app.set("view", path.join(__dirname,"viewsFolder")); //Indicar la carpeta de vistas
 
 //8 Servir Archivos Estaticos
 
@@ -150,7 +152,32 @@
    //B- Importar express para utilizar "express.Router()"
    //C- Crear y exportar el router
       export const router = express.Router()
-   //D- Usar el router como middleware en la app principal
+   //D- Usar el router como middleware en la app principal (app.use(exampleRouter))
+
+//10 Usar motor de vistas EJS (MODULO)
+
+   //Instalar ejs con NPM e importar al archivo
+   //Habilitar EJS y configurar la carpeta a usar
+   //Al responder una solicitud se usa => res.render("Archivo de la carpeta views")
+
+   //Reutilizar componentes html en distintas views
+      //Utilice la siguiente sintaxis para integrar un parcial de EJS en otro archivo
+      //<% - include('RELATIVE/PATH/TO/FILE') %>
+
+/*Otros view engine = Pug, Handle Bars, Mustache
+
+Consejos:
+
+1.Elección del motor de plantillas adecuado
+2.Mantener las plantillas sencillas y legibles (Evitar la sobrecarga de lógica)
+3.Evitar lógica compleja en las plantillas (realizar el procesamiento de datos en el servidor)
+4.Reutilización de plantillas y parciales (reduce la duplicación de código)
+5.Seguridad y prevención de ataques XSS (Cross-Site Scripting)
+6.Optimización del rendimiento con estrategias de caching*/
+
+//11 Concetar Express a una DB
+
+
 
 // Organizacion de codigo
 
