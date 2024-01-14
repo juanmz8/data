@@ -110,3 +110,5 @@ El sistema "ES Module" puede importar archivos .cjs sin necesidad de "require"
 Instalar una dependencia de Desarrollo con la Terminal
 
     npm i UnaDependencia -D
+
+//Configuracion package.json    "dev":"nodemon index.js"

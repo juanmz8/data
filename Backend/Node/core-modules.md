@@ -171,6 +171,11 @@ dirname() //Devuelve la ruta donde se encuentra la carpeta actual
         console.log(path.dirname(__dirname)) //Devuelve la ruta de la carpeta actual
         console.log(__dirname) //Devuelve la ruta incluyendo la carpeta actual
 
+resolve() //Convierte rutas relativas en una ruta absoluta
+
+    resolve("usuarios","documentos","archivo.txt")
+    //Devuelve algo asi: "/Ruta/del/directorio/actual/usuarios/documentos/archivo.txt"
+
 # HTTP
 
 ## http.createServer()

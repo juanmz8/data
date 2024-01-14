@@ -64,6 +64,7 @@
     - TIME       //Hora
     - DATETIME   //Combinacion fecha + hora
 
+
 - Crear Tablas (2 opciones)
 
     CREATE TABLE users (
@@ -76,6 +77,7 @@
         userId [tipo-de-dato] PRIMARY KEY,
         userName [tipo-de-dato]
     );
+
 
 - Asociar una columna entre tablas
 
@@ -97,20 +99,28 @@
         FOREING KEY (empleadoID) REFERENCES empleados(empleadoID)
     );
 
-- Insertar Datos en una tabla
 
+- Insertar Datos en una tabla
     INSERT INTO [tabla] ([columna1],[columna2])
     VALUES ([dato1],[dato2]);
 
-- Ver estructura de tabla (2 Opciones)
 
-    DESC acceso;
-    DESCRIBE acceso;
+- Ver estructura de tabla (2 Opciones)
+    DESC [tabla];
+    DESCRIBE [tabla];
+
 
 - Ver informacion de una tabla
-
     SELECT [columnas-de-tabla] FROM [tabla];
 
-- Ver Registros de una tabla
 
+- Ver Registros de una tabla
     SELECT COUNT([columnas]) FROM [tabla];
+
+
+- Cambiar el nombre a una columna
+    ALTER TABLE [tabla] RENAME COLUMN [columna-vieja] TO [columna-nueva]
+
+
+- Cambiar el Tipo de Dato de una columna
+    ALTER TABLE [tabla] MODIFY COLUMN [columna] [nuevo-tipo-de-dato]

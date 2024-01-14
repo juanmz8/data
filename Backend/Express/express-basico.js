@@ -144,7 +144,7 @@
 
    //Guardar los archivos estaticos en la carpeta "/public"
       //Usando modulo Path de Node
-      app.use("/rutaPublica", express.static(path.join(__dirname,"./public")))
+      app.use("/rutaPublica", express.static(path.resolve("public")))
 
 //9 Router, modularizacion de rutas
 
@@ -157,8 +157,12 @@
 //10 Usar motor de vistas EJS (MODULO)
 
    //Instalar ejs con NPM e importar al archivo
-   //Habilitar EJS y configurar la carpeta a usar
-   //Al responder una solicitud se usa => res.render("Archivo de la carpeta views")
+   //Habilitar EJS y configurar la carpeta a usar :
+      app.set("view engine", "ejs")
+      app.set("view", "folderViews");
+
+   //Al responder una solicitud se usa :
+      res.render("Algun archivo dentro de folderViews")
 
    //Reutilizar componentes html en distintas views
       //Utilice la siguiente sintaxis para integrar un parcial de EJS en otro archivo
@@ -175,13 +179,46 @@ Consejos:
 5.Seguridad y prevención de ataques XSS (Cross-Site Scripting)
 6.Optimización del rendimiento con estrategias de caching*/
 
-//11 Concetar Express a una DB
+/*11 Concetar Express a MySQL 1
 
+A. npm install mysql
+B. Importar mysql y express
+C. Crear una conexion sql y configurarla
+D. Activar la conexion
+*/
 
+            import mysql from "mysql"
+
+            const connection = mysql.createConnection({
+               host:"local o http//:",
+               user:"root",
+               password:"contraseña de user",
+               database:"base de datos SQL"
+            });
+
+            connection.connect(error => {
+               if (error) {
+                  console.error("Failure connect", error)
+               } else {
+                  console.log("Connected")
+               }
+            });
+
+//Concetar Express a MySQL 2
+
+            import { createPool } from "mysql2/promise"
+
+            export const pool = createPool({
+               host:"localhost",
+               user:"root",
+               password: "A!76vsnL",
+               port: 3306,
+               db:"companydb",
+            })
 
 // Organizacion de codigo
 
-   //1º Configuracion de servidor
-   //2º Middleware
-   //3º Rutas de peticiones
+   //1º Configuracion de servidor (app.set)
+   //2º Middleware                (app.use)
+   //3º Rutas de peticiones       (app.get)
    //4º Archivos estaticos
