@@ -5,7 +5,7 @@
     Objeto Process
     CommonJS
     ECMAScript Modules
-    Dependencias de Desarrollo y Produccion
+    Dependencias de Desarrollo/Produccion y Versionado
 
 # Detalles de Node
 
@@ -39,15 +39,16 @@ Elementos de la arquitectura:
 
 METODOS
 
-    process.cwd() //Devuelve un string con el directorio de trabajo actual para el proceso en ejecución.
+    process.env() //Variables de entorno del sistema
+    process.cwd() //Directorio de trabajo actual del proceso
+    process.exit(n) //Finaliza el proceso de Node.js sincronamente con un código de salida
+    process.argv() //Argumentos proporcionados al ejecutar el script desde la linea de comandos
+    process.pid() //ID del proceso actual
 
-    process.chdir(path) //Cambia de directorio
-
-    process.env //Objeto que contiene las variables de entorno del usuario.
-
-    process.exit(n) //Finaliza el proceso de Node.js sincronamente con un código de estado de salida.
-
-    process.kill(pid, signal) //Envia cualquier señal POSIX a cualquier proceso del Sistema Operativo.
+    process.stdout() //Proporciona un flujo de salida estandar asincrono para datos
+    process.stderr() //Proporciona un flujo de salida estandar asincrono para errores
+    process.chdir(path) //Cambia el directorio actual, util para simplificar rutas relativas en proyectos grandes
+    process.kill(pid, [signal]) //Envia señales de Sistema Operativo a un proceso especificado con su ID desde otro proceso o CLI
 
 # CommonJS
 
@@ -104,11 +105,18 @@ El sistema "ES Module" puede importar archivos .cjs sin necesidad de "require"
 
 # Dependencias de Desarrollo y Produccion
 
-- Las dependencias de Produccion son necesarias para que funcione la aplicacion
-- Las dependencias de Desarrollo no son necesarias para que funcione la aplicacion
-
 Instalar una dependencia de Desarrollo con la Terminal
 
     npm i UnaDependencia -D
+    npm i UnaDependencia --development
 
-//Configuracion package.json    "dev":"nodemon index.js"
+//Configuracion package.json para usar nodemon
+    "dev":"nodemon index.js"
+
+Versionado Semantico (1.45.3 ejemplo)
+
+X.Z.Y
+
+X: MAJOR, cuando rompe la compatibilidad con versiones anteriores
+Z: MINOR, cuando se añaden nuevas funcionalidades
+Y: PATCH, cuando se solucionan bugs

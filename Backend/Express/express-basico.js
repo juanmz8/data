@@ -1,3 +1,6 @@
+const we ="w"
+const we ="w"
+
 /*Indice:
 1. Como crear un servidor express       (app)
 2. Como manejar peticiones HTTP         (routing)
@@ -18,7 +21,7 @@
    import express from "express";
    const app = express();
 
-   app.get("/", (req, res) => {
+   app.get("/", (_req, res) => {
      res.send("Respuesta");
    });
 
@@ -28,23 +31,23 @@
 
    //Manejar peticiones en distintas rutas y metodos HTTP
 
-      app.get("/user", (req, res) => {
+      app.get("/user", (_req, res) => {
          res.send("Perfil de usuario");
       });
 
-      app.get("/about", (req, res) => {
+      app.get("/about", (_req, res) => {
          res.send("Informacion de la web");
       });
 
    //Manejar peticiones a rutas inexistentes independientes de su metodo HTTP
 
-      app.use((req, res, next) => {
+      app.use((_req, res, next) => {
          res.status(404).send("Pagina no encontrada")
          next()
       })
 
    //Aceptar cualquier metodo HTTP
-      app.all((req, res) => {
+      app.all((_req, res) => {
          res.status(204)
       })
 
@@ -90,7 +93,7 @@
 //Como usarlos?
 
    //Sirve para establecer un middleware
-   app.use((req, res, next) => {
+   app.use((_req, _res, next) => {
       next()
    })
 
