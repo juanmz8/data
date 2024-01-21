@@ -1,4 +1,5 @@
-# Web Development Concepts Guide
+------------------------------
+Web Development Concepts Guide
 
 - Tipos de Arquitectura web
 - Capas de Arquitectura web
@@ -6,11 +7,12 @@
 - Componentes de Servidor
 - Componentes de Cliente
 - Modelos de componentes WEB
+------------------------------
 
 # Tipos de Arquitectura web
 
 SPA (Single page aplication)
-PWA (Progressive web Aplication) (similar a SPA pero se pueden instalar)
+PWA (Progressive web Aplication) //similar a SPA pero se pueden instalar
 SSR (Server Side Rendering)
 SOA (Service Oriented Aplication)
 
@@ -27,17 +29,34 @@ Capa-Persistencia (Base de datos)
 
 # Patrones de Diseño web
 
-## Model-view-controller (MVC)
+## MVC (Model-view-controller)
+
+    Modelo:
+        Es la logica de negocio:
+            Estructura de datos de la aplicacion
+            Tiene acceso a la Base de Datos
+            Se encarga de actualizar informacion
+            Comprueba la integridad de datos
+
+    Controlador:
+        Intermediario entre Modelo y Vista:
+            Trata todas las peticiones y respuestas
+            Le ordena al Modelo lo que debe hacer
+
+    Vista:
+        Interfaz del usuario:
+            Presenta los datos al usuario
+            Ejerce las acciones y funcionalidades de la aplicacion
 
     - Ciclo de MVC
         - La vista le hace una peticion al controlador
-        - El controlador le pasa la peticion al modelo
-        - El modelo devuelve datos al controlador
-        - El controlar le asigna a la vista la respuesta
+        - El controlador le pide recursos al modelo
+        - El modelo devuelve los datos al controlador
+        - El controlar le transfiere los datos a la vista para representar los datos
 
     Uso:
-        Arquitectura para aplicaciones World Wide Web en los principales lenguajes de programación.
-        Marcos web como Django y Rails
+        Arquitectura para aplicaciones www en los principales lenguajes de programación.
+        Frameworks web como Django y Rails
 
 ## Flux (Actions - State - View)
 

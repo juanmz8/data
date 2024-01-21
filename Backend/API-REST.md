@@ -1,6 +1,9 @@
 # Estructura WEB, APIS y Arquitecturas
 
-- URI => URL y URN
+- Protocolo HTTP
+- Protocolo Socket
+
+- URI/url/urn
 - Codigos de respuesta
 - Metodos HTTP
 
@@ -12,10 +15,34 @@
 - API Socket
 - API Hook
 
+# Protocolo HTTP
+
+    Funciona por Peticiones y respuestas con sus cabeceras
+    No funciona en tiempo real
+
+    Usa TCP como protocolo de transporte
+    Es cacheable
+    Unidireccional
+
+    Usos: Obtencion de recursos (html, js, img)
+    Normalmente Rest APIs
+
+# Protocolo Socket
+
+    Funciona por eventos (EVENT DRIVEN)
+    Funciona en tiempo real (conexion persistente)
+
+    Usa TCP como protocolo de transporte
+    No es cacheable
+    Bidireccional
+
+    Usos: Real-Time, apps de baja latencia
+    Normalmente aplicaciones con envio y devoluciones de informacion
+
 # URI => URL y URN
 
 URI-Unifor Resource Identifier
-    - Identificador de unico de recursos, por nombre o ubicacion
+    - Identificador unico de recursos, por nombre o ubicacion
     - Engloba a las URL y URN, siendo subtipos de URI
 
     URN-Unifor Resource Name
@@ -132,7 +159,6 @@ URI-Unifor Resource Identifier
     - Las empresas tienen un mayor control sobre ellas
 
     De partners:
-
     - Se comparten con partners empresariales específicos
     - Puede ofrecer flujos de ingresos adicionales, sin comprometer la calidad
 
@@ -145,28 +171,25 @@ URI-Unifor Resource Identifier
 PRINCIPIOS
 
     1. Arquitectura basada en recursos
-        Los recursos son identificados por URLs y manipulados a traves de metodos HTTP
+        Cada recurso es identificado por URL y manipulado a traves de metodos HTTP
 
     2. Representacion
-        Los recursos pueden tener representaciones como JSON o XML
-        La representacion de un recurso se envia al cliente
+        Los recursos pueden tener multiples representaciones como JSON,HTML,XML,etc
+        El cliente elige la representacion del recurso
 
-    3. Estado y Comportamiento
-        El estado se transfiere entre cliente y servidor en representaciones
-        Las acciones se realizan mediante metodos HTTTP
+    3. Stateless
+        Cada peticion de un recurso contiene TODA la INFORMACION necesaria para entender la solicitud
+        El servidor no mantiene ningun estado sobre el cliente entre peticiones
+        El servidor no guarda informacion para responder al cliente
 
-    3. Interfaz Uniforme
+    4. Interfaz Uniforme
         Utiliza una interfaz definida y con restricciones como:
-        Identificacion de recursos
-        Manipulacion de recursos a traves de representaciones
-        Descripcion de mensajes y navegabilidad
+            Identificacion unica de recursos (urls)
+            Manipulacion de recursos a traves de representaciones
 
-    4. Sin estado (Stateless)
-        Cada peticion debe contener toda la informacion necesario para procesar la solicitud
-        El servidor no almacena informacion sobre el estado del cliente entre peticiones
-
-    5. Visibilidad
-        Los componentes del sistema son visibles y accedidos de manera uniforme a traves de HTTP
+    5. Separacion Cliente / Servidor
+        Permite que el COMPONENTE cliente y COMPONENTE servidor tengan una evolucion independiente
+        Cada uno puede cambiar si afectar al otro
 
 SEGURIDAD
 

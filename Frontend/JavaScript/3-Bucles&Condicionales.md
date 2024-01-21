@@ -123,17 +123,20 @@ LABEL
 # Switch
 
     switch (operacion) {
-    case resultado1:
-        //sentencias
-        break;
+        case resultado1: {
+            //sentencias
+            break;
+        }
 
-    case resultado2:
-        //sentencias
-        break;
+        case resultado1: {
+            //sentencias
+            break;
+        }
 
-    default:
-        //sentencias
-        break;
+        default: {
+            //sentencias
+            break;
+        }
     }
 
 # Operador Ternario

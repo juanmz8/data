@@ -101,19 +101,40 @@ IMPORTAR
 
     import os from 'node:os'
 
+Importar un archivo .JSON a ESmodule
+    - Opcion 1:
+
+        import fs from "node:fs";
+        const archivoJson = JSON.parse(fs.readFileSync("./file.json", "utf-8"));
+
+    - Opcion 2:
+
+        import { createRequire } from 'node:module';
+
+        const require = createRequire(import.meta.url)
+        const archivoJson = require("./file.json")
+
 El sistema "ES Module" puede importar archivos .cjs sin necesidad de "require"
 
 # Dependencias de Desarrollo y Produccion
 
 Instalar una dependencia de Desarrollo con la Terminal
 
-    npm i UnaDependencia -D
-    npm i UnaDependencia --development
+    npm i unaDependencia -D
+    npm i unaDependencia --development
 
-//Configuracion package.json para usar nodemon
+
+Instalar una Produccion con la Terminal
+
+    npm i unaDependencia -E
+
+Configuracion package.json para usar nodemon:
     "dev":"nodemon index.js"
 
-Versionado Semantico (1.45.3 ejemplo)
+ALTERNATINA NATIVA PARA NO USAR NODEMON:
+    "dev" :"node --watch index.js"
+
+## Versionado Semantico (1.45.3 ejemplo)
 
 X.Z.Y
 

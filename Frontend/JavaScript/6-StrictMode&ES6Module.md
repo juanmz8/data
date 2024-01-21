@@ -48,13 +48,13 @@ Activar Modo Estricto
 CARACTERISTICAS PRINCIPALES
 
     - Siempre funcionan en modo estricto
-    - Siempre se ejecutan despues de que html se haya cargado completamente
-    - No comparten sus funcionalidades entre modulos cargados desde html
+    - Siempre se ejecutan DESPUES de que html se haya cargado completamente
+    - No comparten sus funcionalidades ENTRE MODULOS cargados desde html
     - Se ignoran los scripts externos duplicados
-    - Cargar scripts externos de otro origen (dominio/protocolo/puerto) requiere encabezados CORS
+    - Cargar scripts externos de otro origen REQUIERE establecer encabezados CORS
     - El objeto global "this" es "undefined"
     - En el navegador, "import" debe tener rutas (relativa o absoluta)
-    - Los navegadores antiguos no entienden type = "module", la alternativa, utilizar el atributo "nomodule"
+    - Los navegadores antiguos no entienden type="module", la alternativa, utilizar el atributo "nomodule"
 
 SINTAXIS de Export
 

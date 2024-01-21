@@ -1,6 +1,3 @@
-const we ="w"
-const we ="w"
-
 /*Indice:
 1. Como crear un servidor express       (app)
 2. Como manejar peticiones HTTP         (routing)
@@ -13,7 +10,9 @@ const we ="w"
 9. Router, modularizacion               (express.router())
 10.Servir HTML dinamicos EJS            (View engine/Template engine)
 11.Concetar Express a una DB            (Bases de datos sql)
+12. Error CORS                          (Encabezados de peticiones)
 . Organizacion de codigo
+DESACTIVAR X-POWERED-BY
 */
 
 //1 CREAR UN SERVIDOR
@@ -206,6 +205,21 @@ D. Activar la conexion
                   console.log("Connected")
                }
             });
+// 12. Solucionar error CORS
+
+   app.get("/", (req, res) => {
+      // Opcion 1:
+      res.header("Access-Control-Allow-Origin", "*")
+      res.header("Access-Control-Allow-Methods", "*")
+         //* Acepta recibir peticiones de cualquier origen
+         //* Acepta utilizar cualquier metodo
+
+      // Opcion 2:
+      res.header("Access-Control-Allow-Origin", "http://pagina.com")
+      res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE")
+         // Acepta recibir peticiones solo del origen especificado
+         // Acepta solo metodos especificos
+   })
 
 //Concetar Express a MySQL 2
 
@@ -225,3 +239,7 @@ D. Activar la conexion
    //2º Middleware                (app.use)
    //3º Rutas de peticiones       (app.get)
    //4º Archivos estaticos
+
+
+// DESACTIVAR X - POWERED - BY
+   app.disable("x-powered-by")
